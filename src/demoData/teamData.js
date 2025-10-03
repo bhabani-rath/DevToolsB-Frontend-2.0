@@ -1,0 +1,41 @@
+// constants/teamData.js
+export const teamData = [
+  {
+    name: "Bhabani Shankar Rath",
+    role: "Frontend Developer",
+    avatar: "👨‍💻",
+    skills: [
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Javascript",
+      "React",
+      "Node Js",
+      "Express Js",
+      "Mongo DB",
+      "Framer Motion",
+    ],
+    bio: "Passionate about creating beautiful and intuitive user interfaces.",
+    github: "https://github.com",
+    linkedin: "https://linkedin.com",
+  },
+  {
+    name: "Ankit Dalei",
+    role: "Backend Developer",
+    avatar: "👨‍💻",
+    skills: [
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Javascript",
+      "React",
+      "Node Js",
+      "Express Js",
+      "Mongo DB",
+      "AWS",
+    ],
+    bio: "Expert in building scalable, secure and production ready backend systems.",
+    github: "https://github.com",
+    linkedin: "https://linkedin.com",
+  },
+];
