@@ -28,13 +28,7 @@ const HomePage = () => {
     <div className={`min-h-screen ${isDarkMode ? "dark" : ""}`}>
       <div className="bg-white dark:bg-gray-900 transition-colors duration-300 relative overflow-hidden">
         {/* Background Systems */}
-        <EnhancedBackground isDarkMode={isDarkMode} scrollY={scrollY} />
         <ParticleSystem
-          cursorX={cursorX}
-          cursorY={cursorY}
-          isDarkMode={isDarkMode}
-        />
-        <MouseInteractiveBackground
           cursorX={cursorX}
           cursorY={cursorY}
           isDarkMode={isDarkMode}
