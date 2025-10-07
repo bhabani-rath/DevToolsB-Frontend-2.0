@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import FeatureCard from "./FeatureCard";
-import SectionHeader from './../../../../Components/other/SectionHeader';
-import { featuresData } from './../../../../demoData/featuresData';
+import SectionHeader from "./../../../../Components/other/SectionHeader";
+import { featuresData } from "./../../../../demoData/featuresData";
 
 const FeaturesSection = () => {
   const [activeFeature, setActiveFeature] = useState(null);
@@ -19,73 +19,24 @@ const FeaturesSection = () => {
           subtitle="Everything you need to streamline your development process"
         />
 
-        {/* Asymmetric Grid - Content determines height */}
-        <div className="space-y-6 mt-12">
-          {/* First Row */}
-          <div className="grid grid-cols-1 laptop:grid-cols-3 gap-6 items-start">
+        {/* Clean 2-Column Grid */}
+        <div className="grid grid-cols-1 laptop:grid-cols-3 gap-6 mt-12">
+          {featuresData.map((feature, index) => (
             <motion.div
-              className="laptop:col-span-2"
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <FeatureCard
-                feature={featuresData[0]}
-                index={0}
-                isActive={activeFeature === 0}
+                feature={feature}
+                index={index}
+                isActive={activeFeature === index}
                 onHover={setActiveFeature}
               />
             </motion.div>
-
-            <motion.div
-              className="laptop:col-span-1"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <FeatureCard
-                feature={featuresData[1]}
-                index={1}
-                isActive={activeFeature === 1}
-                onHover={setActiveFeature}
-              />
-            </motion.div>
-          </div>
-
-          {/* Second Row */}
-          <div className="grid grid-cols-1 laptop:grid-cols-3 gap-6 items-start">
-            <motion.div
-              className="laptop:col-span-1"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <FeatureCard
-                feature={featuresData[2]}
-                index={2}
-                isActive={activeFeature === 2}
-                onHover={setActiveFeature}
-              />
-            </motion.div>
-
-            <motion.div
-              className="laptop:col-span-2"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <FeatureCard
-                feature={featuresData[3]}
-                index={3}
-                isActive={activeFeature === 3}
-                onHover={setActiveFeature}
-              />
-            </motion.div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

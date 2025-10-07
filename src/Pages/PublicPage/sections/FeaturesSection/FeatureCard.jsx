@@ -12,14 +12,14 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
     <motion.div
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
-      className="group h-full"
+      className="group h-full w-full" // Removed max-w and mx-auto
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <motion.div
         className={`
-          relative h-[540px] rounded-3xl
+          relative h-[540px] w-full rounded-3xl
           bg-gradient-to-br from-white to-gray-50
           dark:from-gray-800/80 dark:to-gray-900/80
           border border-gray-200/60 dark:border-gray-700/60
@@ -34,6 +34,7 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
           transition: { duration: 0.3, ease: "easeOut" },
         }}
       >
+        {/* Rest of the code remains the same */}
         <motion.div
           className={`
             absolute inset-0 opacity-0 group-hover:opacity-100
@@ -53,7 +54,9 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
           `}
           animate={isActive ? { opacity: 0.3 } : {}}
         />
+
         <div className="relative z-10 h-full flex flex-col p-8">
+          {/* ... rest of your existing code ... */}
           <div className="flex items-start justify-between mb-6">
             <motion.div
               className="relative"
@@ -100,9 +103,7 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
             </motion.span>
           </div>
 
-          {/* Scrollable content area with fixed height */}
           <div className="flex-1 min-h-0 overflow-y-auto pr-2 custom-scrollbar">
-            {/* Title */}
             <h3 className="text-2xl font-bold mb-2">
               <span className="bg-gradient-to-br from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400 transition-all duration-300">
                 {feature.title}
@@ -132,7 +133,6 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
               )}
             </AnimatePresence>
 
-            {/* Compact Stats Grid */}
             <div className="grid grid-cols-3 gap-3 mb-6 p-3 rounded-xl bg-gray-50 dark:bg-gray-800/50">
               {Object.entries(feature.stats)
                 .slice(0, 3)
@@ -148,7 +148,6 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
                 ))}
             </div>
 
-            {/* Show limited tools by default, expand on hover */}
             <div className="mb-4">
               <h4 className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
                 Tools ({feature.tools.length})
@@ -180,7 +179,6 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
               </div>
             </div>
 
-            {/* Features & Use Cases - Only on hover */}
             <AnimatePresence>
               {isActive && (
                 <>
@@ -233,7 +231,6 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
             </AnimatePresence>
           </div>
 
-          {/* Minimalist Footer */}
           <div className="pt-4 mt-4 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
             <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
               <span className="flex items-center gap-1.5">
@@ -250,7 +247,6 @@ const FeatureCard = ({ feature, index, isActive, onHover }) => {
           </div>
         </div>
 
-        {/* Bottom gradient line */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <div className={`h-full bg-gradient-to-r ${feature.gradient}`} />
         </div>

@@ -451,48 +451,6 @@ const Footer = () => {
             />
           </div>
         </div>
-
-        {/* Back to Top Button */}
-        <AnimatePresence>
-          {showBackToTop && (
-            <motion.button
-              onClick={scrollToTop}
-              className="fixed bottom-4 right-4 mobile:bottom-6 mobile:right-6 
-                       tablet:bottom-8 tablet:right-8 
-                       w-10 h-10 mobile:w-12 mobile:h-12 rounded-full
-                       bg-gray-900 dark:bg-gray-700 text-white
-                       hover:bg-gray-800 dark:hover:bg-gray-600
-                       transition-colors duration-200 shadow-lg
-                       flex items-center justify-center group z-50"
-              initial={{ opacity: 0, scale: 0, y: 100 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0, y: 100 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
-              <motion.svg
-                className="w-5 h-5 mobile:w-6 mobile:h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                animate={{ y: [0, -3, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 10l7-7m0 0l7 7m-7-7v18"
-                />
-              </motion.svg>
-            </motion.button>
-          )}
-        </AnimatePresence>
       </motion.footer>
 
       {/* Modals */}

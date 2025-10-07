@@ -7,7 +7,7 @@ export const featuresData = [
       "Solve everyday problems instantly with powerful calculators built for speed and accuracy.",
     longDescription:
       "From financial planning to health metrics, our intelligent calculators handle complex computations with ease. Features real-time validation, historical tracking, and exportable results.",
-    gradient: "from-blue-500 to-purple-600",
+    gradient: "from-cyan-500 via-blue-500 to-indigo-600", // Changed
     tools: [
       "BMI Calculator",
       "Loan Calculator",
@@ -43,7 +43,7 @@ export const featuresData = [
       "Convert values seamlessly across units, currencies, and formats—all in one place.",
     longDescription:
       "Supporting 150+ currencies, 1000+ unit conversions, and real-time exchange rates. Our converters are updated every minute to ensure accuracy.",
-    gradient: "from-green-500 to-teal-600",
+    gradient: "from-emerald-500 via-green-500 to-teal-600", // Changed
     tools: [
       "Currency Converter",
       "Unit Converter",
@@ -79,7 +79,7 @@ export const featuresData = [
       "Generate secure and useful data effortlessly with our all-in-one toolkit.",
     longDescription:
       "Create everything from ultra-secure passwords to professional QR codes. Our generators use industry-standard algorithms and encryption methods.",
-    gradient: "from-yellow-500 to-orange-600",
+    gradient: "from-amber-500 via-orange-500 to-red-500", // Changed
     tools: [
       "Password Generator",
       "UUID Generator",
@@ -115,7 +115,7 @@ export const featuresData = [
       "Personalize your experience, save favorites, and manage your toolkit with ease.",
     longDescription:
       "Your personal command center with customizable widgets, usage analytics, and smart recommendations based on your workflow patterns.",
-    gradient: "from-pink-500 to-red-600",
+    gradient: "from-fuchsia-500 via-pink-500 to-rose-600", // Changed
     tools: [
       "Profile",
       "Saved Tools",
@@ -151,7 +151,7 @@ export const featuresData = [
       "Manage tools, access APIs, and control everything from one powerful panel.",
     longDescription:
       "Enterprise-grade administration panel with advanced analytics, API management, and team collaboration features. Built for scale and security.",
-    gradient: "from-purple-500 to-indigo-600",
+    gradient: "from-violet-500 via-purple-500 to-indigo-600", // Changed
     tools: [
       "Tool Management",
       "API Access",

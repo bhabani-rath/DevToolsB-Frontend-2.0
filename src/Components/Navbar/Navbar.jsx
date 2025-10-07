@@ -189,7 +189,7 @@ const Navbar = ({ activeSection }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  All-in-One Developer Toolkit
+                  One Stop for Daily Calculations
                 </motion.span>
               </div>
 
