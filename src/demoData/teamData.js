@@ -14,10 +14,12 @@ export const teamData = [
       "Express Js",
       "Mongo DB",
       "Framer Motion",
+      "Responsive Design",
     ],
     bio: "Passionate about creating beautiful and intuitive user interfaces.",
     github: "https://github.com",
     linkedin: "https://linkedin.com",
+    portfolio: "https://portfolio-bhabani.vercel.app/",
   },
   {
     name: "Ankit Dalei",
@@ -29,6 +31,7 @@ export const teamData = [
       "Tailwind CSS",
       "Javascript",
       "React",
+      "Redux",
       "Node Js",
       "Express Js",
       "Mongo DB",
@@ -37,5 +40,6 @@ export const teamData = [
     bio: "Expert in building scalable, secure and production ready backend systems.",
     github: "https://github.com",
     linkedin: "https://linkedin.com",
+    portfolio: "https://portfolio-nu-bice-89.vercel.app/",
   },
 ];

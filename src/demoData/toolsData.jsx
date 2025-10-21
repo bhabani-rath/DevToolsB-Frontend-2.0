@@ -1,32 +1,47 @@
-// constants/toolsData.jsx
 export const toolCategories = [
   {
     id: "calculator",
     name: "Calculators",
-    icon: "🧮",
-    count: 15,
+    toolsCreated: 20,
+    totalUser: "150k+",
+    posterImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/Calc-Tool-Main-Area-Card-Logo_s54bhl.jpg",
+    dpImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/everydayCalcLogo_mu1ffq.webp",
     description: "Mathematical and financial calculations made easy",
   },
   {
     id: "converter",
     name: "Converters",
-    icon: "🔄",
-    count: 12,
+    toolsCreated: 20,
+    totalUser: "150k+",
+    posterImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/I_WANT_A_RUBEL_TO_BE_RUPEE_syu65p.png",
+    dpImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/Your_paragraph_text_zcqwae.png",
     description: "Convert between different units and formats",
   },
   {
     id: "generator",
     name: "Generators",
-    icon: "⚡",
-    count: 10,
+    toolsCreated: 20,
+    totalUser: "150k+",
+    posterImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/BE_THE_GENERATOR_OF_SUCCESS_hxcxay.png",
+    dpImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/ChatGPT_Image_Oct_20_2025_07_32_19_PM_gchdzh.png",
     description: "Generate passwords, codes, and unique identifiers",
   },
   {
     id: "miscellaneous",
     name: "Miscellaneous",
-    icon: "🛠️",
-    count: 8,
-    description: "Additional utilities and helpful tools",
+    toolsCreated: 20,
+    totalUser: "150k+",
+    posterImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/LET_S_DO_SOME_MISCELLANEOUS_rsxtso.png",
+    dpImg:
+      "https://res.cloudinary.com/dva4r5mad/image/upload/Add_the_text__MISCEL_pzoltc.png",
+    description: "Additional utilities and helpful tools for additional use",
   },
 ];
 export const toolsData = [

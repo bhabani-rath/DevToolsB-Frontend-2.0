@@ -1,175 +1,150 @@
 // sections/TeamSection/TeamMemberCard.jsx
-import React from "react";
 import { motion } from "framer-motion";
-import HomeCard from "./../../../../Components/Cards/HomeCard";
-import { FiExternalLink, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiLinkedin, FiAward } from "react-icons/fi";
 
 const TeamMemberCard = ({ member, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.2 }}
-      className="group h-full"
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      className="group h-full perspective-1000"
     >
-      <HomeCard className="relative h-full overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600/80 transition-all duration-500 rounded-2xl p-8 flex flex-col">
-        {/* Subtle animated background effect */}
-        <motion.div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03), transparent 70%)",
-          }}
-        />
+      <motion.div
+        className="relative h-full"
+        whileHover={{ rotateY: 2, rotateX: 2 }}
+        transition={{ duration: 0.3 }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Background gradient blob */}
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Avatar Section with Divider Line */}
-        <div className="relative mb-8 z-10">
-          {/* Decorative line through avatar */}
-          <motion.div
-            className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-600/60 to-transparent"
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2 + 0.3, duration: 0.6 }}
-          />
-
-          {/* Avatar Circle */}
-          <motion.div
-            className="relative z-10 w-40 h-40 mx-auto rounded-full border border-gray-600/70 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-6xl overflow-hidden group-hover:border-blue-500/50 transition-all duration-500 shadow-lg"
-            whileHover={{
-              scale: 1.08,
-              rotate: [0, -5, 5, 0],
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-            }}
-          >
-            {/* Glow effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-500" />
-
-            <span className="relative z-10">{member.avatar}</span>
-          </motion.div>
-        </div>
-
-        {/* Content Section */}
-        <div className="flex-1 flex flex-col">
-          {/* Name & Role */}
-          <div className="mb-6">
-            <motion.h3
-              className="text-2xl font-bold mb-2 text-white tracking-tight"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 + 0.4 }}
-            >
-              {member.name}
-            </motion.h3>
-            <motion.p
-              className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-medium"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 + 0.5 }}
-            >
-              {member.role}
-            </motion.p>
+        {/* Main card */}
+        <div className="relative h-full bg-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-gray-800/50 shadow-2xl">
+          {/* Floating particles effect */}
+          <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
+            <div className="absolute top-10 right-10 w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+            <div className="absolute bottom-20 left-10 w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse delay-300" />
+            <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-pink-500 rounded-full animate-pulse delay-700" />
           </div>
 
-          {/* Bio if available */}
+          {/* Top section */}
+          <div className="relative mb-8">
+            {/* Avatar with floating effect */}
+            <div className="relative w-24 h-24 mx-auto mb-6">
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-60"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.6, 0.8, 0.6],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <motion.div
+                className="relative w-24 h-24 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl flex items-center justify-center text-5xl shadow-2xl"
+                whileHover={{ scale: 1.1, rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="relative z-10">{member.avatar}</span>
+              </motion.div>
+            </div>
+
+            {/* Name */}
+            <h3 className="text-2xl font-bold text-center text-white mb-2">
+              {member.name}
+            </h3>
+
+            {/* Role with icon */}
+            <div className="flex items-center justify-center gap-2">
+              <FiAward className="w-4 h-4 text-blue-400" />
+              <p className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                {member.role}
+              </p>
+            </div>
+          </div>
+
+          {/* Bio */}
           {member.bio && (
-            <motion.p
-              className="text-sm text-gray-400 mb-6 leading-relaxed"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 + 0.6 }}
-            >
+            <p className="text-sm text-gray-400 text-center mb-6 leading-relaxed line-clamp-3">
               {member.bio}
-            </motion.p>
+            </p>
           )}
 
-          {/* Skills Section */}
-          <div className="mb-8">
-            <motion.div
-              className="text-xs uppercase tracking-wider text-gray-500 mb-3 font-semibold"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 + 0.7 }}
-            >
-              Expertise
-            </motion.div>
-            <div className="flex flex-wrap gap-2">
-              {member.skills.map((skill, skillIndex) => (
-                <motion.span
-                  key={skillIndex}
-                  className="px-4 py-1.5 text-xs bg-gray-800/80 rounded-lg text-gray-300 border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800 transition-all duration-300 font-medium backdrop-blur-sm"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: index * 0.2 + 0.7 + skillIndex * 0.05,
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -2,
-                  }}
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
+          {/* Skills cloud */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {member.skills.map((skill, idx) => (
+              <motion.span
+                key={idx}
+                className="px-3 py-1.5 text-xs bg-gradient-to-r from-gray-800/80 to-gray-800/40 backdrop-blur-sm rounded-full text-gray-300 border border-gray-700/50 hover:border-blue-500/50 hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-300"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 + idx * 0.03 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+              >
+                {skill}
+              </motion.span>
+            ))}
           </div>
 
-          {/* Footer Section - pushed to bottom */}
-          <div className="mt-auto space-y-4">
-            {/* Social Links */}
-            <div className="flex items-center justify-between pb-4 border-b border-gray-800/50">
-              <span className="text-xs text-gray-500 uppercase tracking-wider font-semibold">
-                Connect
-              </span>
-              <div className="flex gap-3">
-                <motion.a
-                  href={member.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-gray-800/50 border border-gray-700/50 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-800 hover:border-blue-500/50 transition-all duration-300"
-                  whileHover={{ y: -3, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FiGithub className="w-4 h-4" />
-                </motion.a>
-                <motion.a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-gray-800/50 border border-gray-700/50 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-800 hover:border-blue-500/50 transition-all duration-300"
-                  whileHover={{ y: -3, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FiLinkedin className="w-4 h-4" />
-                </motion.a>
-              </div>
+          {/* Footer actions */}
+          <div className="space-y-3">
+            {/* Social links row */}
+            <div className="flex justify-center gap-3">
+              <motion.a
+                href={member.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-2xl bg-gray-800/50 backdrop-blur-sm hover:bg-gray-800 border border-gray-700/50 hover:border-blue-500/50 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                whileHover={{ y: -5, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FiGithub className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-2xl bg-gray-800/50 backdrop-blur-sm hover:bg-gray-800 border border-gray-700/50 hover:border-blue-500/50 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                whileHover={{ y: -5, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FiLinkedin className="w-5 h-5" />
+              </motion.a>
             </div>
 
-            {/* Portfolio Button */}
+            {/* Portfolio button */}
             <motion.a
               href={member.portfolio || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full px-5 py-3 text-sm bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 rounded-xl text-gray-200 border border-blue-500/30 hover:border-blue-500/50 font-medium inline-flex items-center justify-center gap-2 transition-all duration-300 group/btn"
-              whileHover={{ scale: 1.02, y: -2 }}
+              className="relative group/btn w-full h-12 rounded-2xl overflow-hidden flex items-center justify-center text-white font-medium text-sm gap-2"
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <span>View Portfolio</span>
-              <FiExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
+              {/* Animated gradient background */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                style={{ backgroundSize: "200% 100%" }}
+              />
+              <span className="relative z-10">View Portfolio</span>
+              <FiExternalLink className="relative z-10 w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
             </motion.a>
           </div>
         </div>
-      </HomeCard>
+      </motion.div>
     </motion.div>
   );
 };

@@ -1,64 +1,7 @@
 // sections/ToolsSection/ToolsSection.jsx
 import ToolCategoryCard from "./ToolCategoryCard";
 import SectionHeader from "./../../../../Components/other/SectionHeader";
-
-const toolCategories = [
-  {
-    id: "calculators",
-    name: "Calculators",
-    iconType: "calculator",
-    icon: "🧮", // Fallback emoji if needed
-    gradient: "from-blue-500 to-indigo-600",
-    description: "Mathematical and financial calculations made easy",
-    count: 15,
-    features: [
-      "Scientific Calculators",
-      "Financial Tools",
-      "Health & Fitness",
-      "Date & Time",
-    ],
-  },
-  {
-    id: "converters",
-    name: "Converters",
-    iconType: "converter",
-    icon: "🔄",
-    gradient: "from-green-500 to-emerald-600",
-    description: "Convert between different units and formats",
-    count: 12,
-    features: [
-      "Unit Conversion",
-      "Currency Exchange",
-      "Color Formats",
-      "Data Formats",
-    ],
-  },
-  {
-    id: "generators",
-    name: "Generators",
-    iconType: "generator",
-    icon: "⚡",
-    gradient: "from-pink-500 to-rose-600",
-    description: "Generate passwords, codes, and unique identifiers",
-    count: 10,
-    features: [
-      "Password Generator",
-      "QR Code Creator",
-      "UUID Generator",
-      "Hash Generator",
-    ],
-  },
-  {
-    id: "miscellaneous",
-    name: "Miscellaneous",
-    iconType: "miscellaneous",
-    icon: "🔧",
-    gradient: "from-orange-500 to-red-600",
-    description: "Additional utilities and helpful tools",
-    count: 8,
-    features: ["Text Tools", "Formatters", "Validators", "Utilities"],
-  },
-];
+import { toolCategories } from "../../../../demoData/toolsData";
 
 const ToolsSection = () => {
   return (
@@ -78,16 +21,19 @@ const ToolsSection = () => {
 
       <div className="max-w-6xl mx-auto relative">
         <SectionHeader
-          title="Developer Tools"
-          subtitle="Choose a category to explore our comprehensive toolkit"
+          title="Tools We Offer"
+          subtitle="Choose a category to explore our comprehensive tools"
         />
 
-        <div className="grid grid-cols-1 mobile:grid-cols-2 laptop:grid-cols-4 gap-6">
+        <div className="w-full grid grid-cols-1 mobile:grid-cols-2 laptop:grid-cols-4 gap-72 -ml-30">
           {toolCategories.map((category, index) => (
             <ToolCategoryCard
-              key={category.id}
-              category={category}
-              index={index}
+              key={index}
+              posterImg={category.posterImg}
+              sectionHeader={category.name}
+              descTool={category.description}
+              toolCount={category.toolsCreated}
+              totalUser={category.totalUser}
             />
           ))}
         </div>
