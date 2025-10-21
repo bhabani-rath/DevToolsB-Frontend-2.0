@@ -37,7 +37,7 @@ const ContactSection = ({ isDarkMode }) => {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative">
         <SectionHeader
           title="Get In Touch"
           subtitle="Have a question or want to collaborate? We'd love to hear from you."

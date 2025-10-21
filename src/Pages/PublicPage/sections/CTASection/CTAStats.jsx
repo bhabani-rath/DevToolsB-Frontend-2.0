@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    number: "1M+",
-    label: "Tools Generated",
+    number: "50+",
+    label: "Tools Created",
     color: "from-blue-400 to-blue-600",
   },
   {
-    number: "50K+",
-    label: "Active Users",
+    number: "1K+",
+    label: "Happy Users",
     color: "from-purple-400 to-purple-600",
   },
   { number: "4.9/5", label: "User Rating", color: "from-pink-400 to-pink-600" },
