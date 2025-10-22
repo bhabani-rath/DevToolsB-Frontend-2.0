@@ -21,7 +21,13 @@ const TeamMemberCard = ({ member, index }) => {
         <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Main card */}
-        <div className="relative h-full bg-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-gray-800/50 shadow-2xl">
+        <div
+          className="relative h-full 
+          bg-white/90 dark:bg-gray-900/80 
+          backdrop-blur-xl rounded-3xl p-8 
+          border border-gray-200 dark:border-gray-800/50 
+          shadow-2xl"
+        >
           {/* Floating particles effect */}
           <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
             <div className="absolute top-10 right-10 w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
@@ -55,14 +61,22 @@ const TeamMemberCard = ({ member, index }) => {
             </div>
 
             {/* Name */}
-            <h3 className="text-2xl font-bold text-center text-white mb-2">
+            <h3
+              className="text-2xl font-bold text-center 
+              text-gray-900 dark:text-white 
+              mb-2"
+            >
               {member.name}
             </h3>
 
             {/* Role with icon */}
             <div className="flex items-center justify-center gap-2">
-              <FiAward className="w-4 h-4 text-blue-400" />
-              <p className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              <FiAward className="w-4 h-4 text-blue-500 dark:text-blue-400" />
+              <p
+                className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r 
+                from-blue-600 to-purple-600 
+                dark:from-blue-400 dark:to-purple-400"
+              >
                 {member.role}
               </p>
             </div>
@@ -70,7 +84,11 @@ const TeamMemberCard = ({ member, index }) => {
 
           {/* Bio */}
           {member.bio && (
-            <p className="text-sm text-gray-400 text-center mb-6 leading-relaxed line-clamp-3">
+            <p
+              className="text-sm 
+              text-gray-600 dark:text-gray-400 
+              text-center mb-6 leading-relaxed line-clamp-3"
+            >
               {member.bio}
             </p>
           )}
@@ -80,7 +98,18 @@ const TeamMemberCard = ({ member, index }) => {
             {member.skills.map((skill, idx) => (
               <motion.span
                 key={idx}
-                className="px-3 py-1.5 text-xs bg-gradient-to-r from-gray-800/80 to-gray-800/40 backdrop-blur-sm rounded-full text-gray-300 border border-gray-700/50 hover:border-blue-500/50 hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-300"
+                className="px-3 py-1.5 text-xs 
+                  bg-gradient-to-r 
+                  from-gray-100 to-gray-50 
+                  dark:from-gray-800/80 dark:to-gray-800/40 
+                  backdrop-blur-sm rounded-full 
+                  text-gray-700 dark:text-gray-300 
+                  border 
+                  border-gray-200 dark:border-gray-700/50 
+                  hover:border-blue-400 dark:hover:border-blue-500/50 
+                  hover:from-blue-50 hover:to-purple-50
+                  dark:hover:from-blue-600/10 dark:hover:to-purple-600/10 
+                  transition-all duration-300"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + idx * 0.03 }}
@@ -99,7 +128,17 @@ const TeamMemberCard = ({ member, index }) => {
                 href={member.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-2xl bg-gray-800/50 backdrop-blur-sm hover:bg-gray-800 border border-gray-700/50 hover:border-blue-500/50 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                className="w-11 h-11 rounded-2xl 
+                  bg-gray-100 dark:bg-gray-800/50 
+                  backdrop-blur-sm 
+                  hover:bg-gray-200 dark:hover:bg-gray-800 
+                  border 
+                  border-gray-200 dark:border-gray-700/50 
+                  hover:border-blue-400 dark:hover:border-blue-500/50 
+                  flex items-center justify-center 
+                  text-gray-600 dark:text-gray-400 
+                  hover:text-gray-900 dark:hover:text-white 
+                  transition-all"
                 whileHover={{ y: -5, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -109,7 +148,17 @@ const TeamMemberCard = ({ member, index }) => {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-2xl bg-gray-800/50 backdrop-blur-sm hover:bg-gray-800 border border-gray-700/50 hover:border-blue-500/50 flex items-center justify-center text-gray-400 hover:text-white transition-all"
+                className="w-11 h-11 rounded-2xl 
+                  bg-gray-100 dark:bg-gray-800/50 
+                  backdrop-blur-sm 
+                  hover:bg-gray-200 dark:hover:bg-gray-800 
+                  border 
+                  border-gray-200 dark:border-gray-700/50 
+                  hover:border-blue-400 dark:hover:border-blue-500/50 
+                  flex items-center justify-center 
+                  text-gray-600 dark:text-gray-400 
+                  hover:text-gray-900 dark:hover:text-white 
+                  transition-all"
                 whileHover={{ y: -5, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

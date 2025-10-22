@@ -1,17 +1,37 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "./Context/ThemeContext";
-import HomePage from "./Pages/PublicPage/HomePage";
-import ToolsPage from "./Pages/PublicPage/sections/ToolsSection/ToolPage";
+import NotFound from "./Components/404/NotFound";
+import PageLoader from "./Components/Loader/Loader.jsx";
+
+// Lazy loading for routes
+const HomePage = lazy(() => import("./Pages/PublicPage/HomePage"));
+const ToolsPage = lazy(() =>
+  import("./Pages/PublicPage/sections/ToolsSection/ToolPage")
+);
+
+// Router configuration
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/tools",
+    element: <ToolsPage />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+]);
 
 function App() {
   return (
     <ThemeProvider>
-      <Router>
-        <Routes>
-          <Route element={<HomePage />} path="/" />
-          <Route path="/tools" element={<ToolsPage />} />
-        </Routes>
-      </Router>
+      <Suspense fallback={<PageLoader />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </ThemeProvider>
   );
 }
