@@ -58,7 +58,7 @@ const AnimatedButton = ({
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <span className="relative z-10 flex items-center justify-center gap-2">
+      <span className="relative flex items-center justify-center gap-2">
         {children}
         {renderIcon()}
       </span>

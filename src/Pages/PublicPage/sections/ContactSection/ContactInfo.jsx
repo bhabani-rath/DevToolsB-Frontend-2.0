@@ -1,5 +1,4 @@
 // sections/ContactSection/ContactInfo.jsx
-import React from "react";
 import { motion } from "framer-motion";
 import ContactMethodCard from "./ContactMethodCard";
 

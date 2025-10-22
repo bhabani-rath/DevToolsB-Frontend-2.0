@@ -11,7 +11,7 @@ const CTASection = () => {
 
       <CTABackground />
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-4xl mx-auto text-center relative ">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const CTASection = () => {
             }}
             className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
           >
-            Ready to Supercharge Your Workflow?
+            Ready to get supercharged with DevToolsB
           </motion.span>
         </motion.h2>
 
@@ -40,7 +40,7 @@ const CTASection = () => {
           transition={{ delay: 0.1 }}
           className="text-xl text-gray-300 mb-8"
         >
-          Join thousands of developers who are already using DevToolsB
+          Join thousands of users who are already using DevToolsB
         </motion.p>
 
         <motion.div
@@ -55,7 +55,7 @@ const CTASection = () => {
             variant="primary"
             className="text-white"
           >
-            Start Building
+            Join Our Family
             <motion.span
               animate={{
                 x: [0, 5, 0],
@@ -67,14 +67,9 @@ const CTASection = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 },
-                rotate: {
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                },
               }}
             >
-              🚀
+              🤝
             </motion.span>
           </AnimatedButton>
 
@@ -82,26 +77,7 @@ const CTASection = () => {
             onClick={() => console.log("View Docs")}
             variant="secondary"
           >
-            View Documentation
-            <motion.svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              animate={{ rotate: [0, 360] }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-              />
-            </motion.svg>
+            Be A Tool Creator ©️
           </AnimatedButton>
         </motion.div>
 

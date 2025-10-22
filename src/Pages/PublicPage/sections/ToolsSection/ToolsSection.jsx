@@ -1,45 +1,7 @@
 // sections/ToolsSection/ToolsSection.jsx
 import ToolCategoryCard from "./ToolCategoryCard";
 import SectionHeader from "./../../../../Components/other/SectionHeader";
-
-const toolCategories = [
-  {
-    id: "calculator",
-    name: "Calculators",
-    icon: "🧮",
-    description: "Mathematical and financial calculations made easy",
-    gradient: "from-blue-400 to-indigo-600",
-    count: 15,
-    features: ["Scientific", "Financial", "Health", "Date & Time"],
-  },
-  {
-    id: "converter",
-    name: "Converters",
-    icon: "🔄",
-    description: "Convert between different units and formats",
-    gradient: "from-green-400 to-teal-600",
-    count: 12,
-    features: ["Units", "Currency", "Color", "Data Formats"],
-  },
-  {
-    id: "generator",
-    name: "Generators",
-    icon: "⚡",
-    description: "Generate passwords, codes, and unique identifiers",
-    gradient: "from-purple-400 to-pink-600",
-    count: 10,
-    features: ["Password", "QR Code", "UUID", "Hash"],
-  },
-  {
-    id: "miscellaneous",
-    name: "Miscellaneous",
-    icon: "🛠️",
-    description: "Additional utilities and helpful tools",
-    gradient: "from-orange-400 to-red-600",
-    count: 8,
-    features: ["Text Tools", "Formatters", "Validators", "Utilities"],
-  },
-];
+import { toolCategories } from "../../../../demoData/toolsData";
 
 const ToolsSection = () => {
   return (
@@ -59,16 +21,19 @@ const ToolsSection = () => {
 
       <div className="max-w-6xl mx-auto relative">
         <SectionHeader
-          title="Developer Tools"
-          subtitle="Choose a category to explore our comprehensive toolkit"
+          title="Tools We Offer"
+          subtitle="Choose a category to explore our comprehensive tools"
         />
 
-        <div className="grid grid-cols-1 mobile:grid-cols-2 laptop:grid-cols-4 gap-6">
+        <div className="w-full grid grid-cols-1 mobile:grid-cols-2 laptop:grid-cols-4 gap-72 -ml-30">
           {toolCategories.map((category, index) => (
             <ToolCategoryCard
-              key={category.id}
-              category={category}
-              index={index}
+              key={index}
+              posterImg={category.posterImg}
+              sectionHeader={category.name}
+              descTool={category.description}
+              toolCount={category.toolsCreated}
+              totalUser={category.totalUser}
             />
           ))}
         </div>
