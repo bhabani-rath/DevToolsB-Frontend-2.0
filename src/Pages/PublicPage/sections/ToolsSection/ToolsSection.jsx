@@ -34,6 +34,7 @@ const ToolsSection = () => {
               descTool={category.description}
               toolCount={category.toolsCreated}
               totalUser={category.totalUser}
+              href={category.href}
             />
           ))}
         </div>

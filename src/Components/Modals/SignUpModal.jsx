@@ -1,10 +1,10 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Cropper from "react-easy-crop";
 import InputField from "../InputFields/InputField";
 
 const SignUpModal = ({ isOpen, onClose }) => {
-  const fileInputRef = useRef(null);    
+  const fileInputRef = useRef(null);
   const [profileImage, setProfileImage] = useState(null);
   const [imageSrc, setImageSrc] = useState(null);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -21,6 +21,48 @@ const SignUpModal = ({ isOpen, onClose }) => {
     password: "",
     confirmPassword: "",
   });
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+
+      // Lock body scroll
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+
+      return () => {
+        // Restore body scroll
+        const scrollY = document.body.style.top;
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      };
+    }
+  }, [isOpen]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && isOpen) {
+        if (showCropper) {
+          handleCropCancel();
+        } else {
+          onClose();
+        }
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+      return () => document.removeEventListener("keydown", handleEscape);
+    }
+  }, [isOpen, showCropper, onClose]);
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -120,30 +162,34 @@ const SignUpModal = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Overlay - blocks all background interaction */}
           <motion.div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9998]"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
             onClick={onClose}
+            style={{ cursor: "pointer" }}
           />
+
+          {/* Modal Container */}
           <motion.div
-            className="fixed inset-0 flex items-center justify-center z-50 p-3 mobile:p-4"
+            className="fixed inset-0 flex items-center justify-center z-[9999] p-3 mobile:p-4 pointer-events-none"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
             <div
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-lg mobile:max-w-xl p-6 mobile:p-8 max-h-[90vh] overflow-y-auto"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-lg mobile:max-w-xl p-6 mobile:p-8 max-h-[90vh] overflow-y-auto pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Image Cropper Modal */}
               <AnimatePresence>
                 {showCropper && (
                   <motion.div
-                    className="fixed inset-0 bg-black/80 z-[60] flex items-center justify-center p-4"
+                    className="fixed inset-0 bg-black/80 z-[10000] flex items-center justify-center p-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -190,6 +236,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
 
                       <div className="flex gap-3 mt-6">
                         <motion.button
+                          type="button"
                           onClick={handleCropCancel}
                           className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                           whileHover={{ scale: 1.02 }}
@@ -198,6 +245,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                           Cancel
                         </motion.button>
                         <motion.button
+                          type="button"
                           onClick={handleCropConfirm}
                           className="flex-1 px-4 py-2 bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white rounded-lg transition-all"
                           whileHover={{ scale: 1.02 }}
@@ -301,12 +349,15 @@ const SignUpModal = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <form className="space-y-4 mobile:space-y-5">
+              <form
+                className="space-y-4 mobile:space-y-5"
+                onSubmit={(e) => e.preventDefault()}
+              >
                 {/* Name Fields Row */}
                 <div className="grid grid-cols-1 mobile:grid-cols-2 gap-4">
                   <InputField
                     name="firstName"
-                    id="firstName"
+                    id="signup-firstName"
                     label="First Name"
                     value={formData.firstName}
                     onChange={handleChange}
@@ -323,7 +374,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                   />
                   <InputField
                     name="lastName"
-                    id="lastName"
+                    id="signup-lastName"
                     label="Last Name"
                     value={formData.lastName}
                     onChange={handleChange}
@@ -344,7 +395,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                 <InputField
                   type="email"
                   name="email"
-                  id="email"
+                  id="signup-email"
                   label="Email Address"
                   value={formData.email}
                   onChange={handleChange}
@@ -371,7 +422,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                 <div className="grid grid-cols-1 mobile:grid-cols-2 gap-4">
                   <InputField
                     name="username"
-                    id="username"
+                    id="signup-username"
                     label="Username"
                     value={formData.username}
                     onChange={handleChange}
@@ -397,7 +448,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                   <div className="relative">
                     <select
                       name="gender"
-                      id="gender"
+                      id="signup-gender"
                       value={formData.gender}
                       onChange={handleChange}
                       className="peer w-full p-3 mini:p-3.5 mobile:p-4 pt-5 mini:pt-5.5 mobile:pt-6 pl-9 mini:pl-10 mobile:pl-11 pr-3 mini:pr-4 
@@ -413,7 +464,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                     <label
                       className="absolute text-xs mini:text-sm mobile:text-base duration-150 transform top-4 mini:top-5 z-10 origin-[0] left-9 mini:left-10 mobile:left-11 
                                text-gray-500 dark:text-gray-400 peer-focus:text-gray-900 dark:peer-focus:text-gray-300 scale-75 -translate-y-3 mini:-translate-y-4"
-                      htmlFor="gender"
+                      htmlFor="signup-gender"
                     >
                       Gender
                     </label>
@@ -453,7 +504,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                 <InputField
                   type="password"
                   name="password"
-                  id="password"
+                  id="signup-password"
                   label="Password"
                   value={formData.password}
                   onChange={handleChange}
@@ -479,7 +530,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                 <InputField
                   type="password"
                   name="confirmPassword"
-                  id="confirmPassword"
+                  id="signup-confirmPassword"
                   label="Confirm Password"
                   value={formData.confirmPassword}
                   onChange={handleChange}
@@ -546,7 +597,10 @@ const SignUpModal = ({ isOpen, onClose }) => {
 
                 <div className="text-center text-sm text-gray-600 dark:text-gray-400">
                   Already have an account?{" "}
-                  <button className="text-gray-900 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white font-medium">
+                  <button
+                    type="button"
+                    className="text-gray-900 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white font-medium"
+                  >
                     Sign in
                   </button>
                 </div>

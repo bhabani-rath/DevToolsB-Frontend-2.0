@@ -24,7 +24,8 @@ const Navbar = ({ activeSection }) => {
     { name: "Home", href: "#home", icon: "🏠" },
     { name: "About", href: "#about", icon: "ℹ️" },
     { name: "Features", href: "#features", icon: "✨" },
-    { name: "Our Team", href: "#team", icon: "👥" },
+    { name: "Teams", href: "#team", icon: "👥" },
+    { name: "Tools", href: "#tools", icon: "⚙️" },
     { name: "Contact", href: "#contact", icon: "📧" },
   ];
 
@@ -208,7 +209,7 @@ const Navbar = ({ activeSection }) => {
           {/* Desktop Layout */}
           <div className="hidden laptop:flex items-center justify-between flex-1">
             <motion.div
-              className="flex items-center justify-center flex-1 mx-8 laptop:mx-16 desktop:mx-24"
+              className="flex items-center justify-center flex-1 mx-8 laptop:mx-16 desktop:mx-16"
               variants={navVariants}
             >
               <div className="flex items-center space-x-1 relative">

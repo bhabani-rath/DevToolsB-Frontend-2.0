@@ -1,10 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import InputField from "../InputFields/InputField";
 
 const SignInModal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+
+      // Lock body scroll
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+
+      return () => {
+        // Restore body scroll
+        const scrollY = document.body.style.top;
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      };
+    }
+  }, [isOpen]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+      return () => document.removeEventListener("keydown", handleEscape);
+    }
+  }, [isOpen, onClose]);
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -26,30 +64,38 @@ const SignInModal = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Overlay - blocks all background interaction */}
           <motion.div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9998]"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
             onClick={onClose}
+            style={{ cursor: "pointer" }}
           />
+
+          {/* Modal Container */}
           <motion.div
-            className="fixed inset-0 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 flex items-center justify-center z-[9999] p-4 pointer-events-none"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
             <div
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md p-6 mobile:p-8"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md p-6 mobile:p-8 pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Modal content remains the same */}
               <h2 className="text-2xl mobile:text-3xl font-bold text-center mb-6 mobile:mb-8 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
                 Welcome Back
               </h2>
 
-              <form className="space-y-5 mobile:space-y-6">
+              <form
+                className="space-y-5 mobile:space-y-6"
+                onSubmit={(e) => e.preventDefault()}
+              >
                 <InputField
                   type="email"
                   name="email"
@@ -137,9 +183,13 @@ const SignInModal = ({ isOpen, onClose }) => {
                     transition={{ duration: 0.3 }}
                   />
                 </motion.button>
+
                 <div className="text-center text-sm text-gray-600 dark:text-gray-400">
                   Don't have an account?{" "}
-                  <button className="text-gray-900 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white font-medium">
+                  <button
+                    type="button"
+                    className="text-gray-900 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white font-medium"
+                  >
                     Sign up
                   </button>
                 </div>

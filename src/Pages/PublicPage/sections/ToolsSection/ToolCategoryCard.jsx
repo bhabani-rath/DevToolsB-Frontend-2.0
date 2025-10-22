@@ -6,7 +6,7 @@ const ToolCategoryCard = ({
   descTool,
   toolCount,
   totalUser,
-  categoryId,
+  href,
 }) => {
   return (
     <div
@@ -66,10 +66,13 @@ const ToolCategoryCard = ({
 
       {/* Button Section */}
       <div className="px-6 pb-6">
-        <button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-pink-600 hover:from-violet-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-violet-500/50 transition-all duration-300 group">
+        <a
+          href={href}
+          className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-pink-600 hover:from-violet-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-violet-500/50 transition-all duration-300 group"
+        >
           <span>Explore Now</span>
           <AiOutlineArrowUp className="rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-        </button>
+        </a>
       </div>
     </div>
   );

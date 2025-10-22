@@ -9,6 +9,7 @@ export const toolCategories = [
     dpImg:
       "https://res.cloudinary.com/dva4r5mad/image/upload/everydayCalcLogo_mu1ffq.webp",
     description: "Mathematical and financial calculations made easy",
+    href: "/tools?category=calculator",
   },
   {
     id: "converter",
@@ -20,6 +21,7 @@ export const toolCategories = [
     dpImg:
       "https://res.cloudinary.com/dva4r5mad/image/upload/Your_paragraph_text_zcqwae.png",
     description: "Convert between different units and formats",
+    href: "/tools?category=converter",
   },
   {
     id: "generator",
@@ -31,6 +33,7 @@ export const toolCategories = [
     dpImg:
       "https://res.cloudinary.com/dva4r5mad/image/upload/ChatGPT_Image_Oct_20_2025_07_32_19_PM_gchdzh.png",
     description: "Generate passwords, codes, and unique identifiers",
+    href: "/tools?category=generator",
   },
   {
     id: "miscellaneous",
@@ -42,6 +45,7 @@ export const toolCategories = [
     dpImg:
       "https://res.cloudinary.com/dva4r5mad/image/upload/Add_the_text__MISCEL_pzoltc.png",
     description: "Additional utilities and helpful tools for additional use",
+    href: "/tools?category=miscellaneous",
   },
 ];
 export const toolsData = [
