@@ -492,9 +492,9 @@ const Navbar = ({ activeSection }) => {
               <div className="space-y-1">
                 {navLinks.map((link, index) => (
                   <motion.a
-                    key={link.name}
+                    key={index}
                     href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className={`relative flex items-center gap-2 px-4 py-2
                  text-gray-600 dark:text-gray-300 
                  hover:text-gray-900 dark:hover:text-white 

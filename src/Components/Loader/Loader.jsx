@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import wevlogo from "../../assets/Home.jsx Assets/B Logo.png";
 
 // Custom Modal Component
@@ -24,7 +24,7 @@ const CustomModal = ({
       setIsVisible(false);
       const timer = setTimeout(() => {
         setShouldRender(false);
-      }, 300); // Match transition duration
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
@@ -89,7 +89,12 @@ export const Loader = ({
   }, []);
 
   return (
-    <div className="relative flex flex-col gap-6 w-full h-full items-center justify-center p-8">
+    <div
+      className="relative flex flex-col 
+      gap-4 mobile:gap-5 mobile-large:gap-6 
+      w-full h-full items-center justify-center 
+      p-4 mobile:p-6 tablet:p-8"
+    >
       {/* Background particles */}
       <div className="absolute inset-0 overflow-hidden">
         {particlePositions.map((particle) => (
@@ -110,22 +115,44 @@ export const Loader = ({
 
       {/* Main loader */}
       <div className="relative">
-        {/* Outer rotating ring */}
+        {/* Outer rotating ring - Responsive sizes */}
         <div className="absolute inset-0 animate-spin-slow">
-          <div className="w-64 h-64 rounded-full border-4 border-transparent border-t-blue-400 border-r-purple-500" />
+          <div
+            className="
+            w-40 h-40 
+            mobile:w-48 mobile:h-48 
+            mobile-large:w-56 mobile-large:h-56 
+            tablet:w-64 tablet:h-64 
+            rounded-full border-2 mobile:border-3 tablet:border-4 
+            border-transparent border-t-blue-400 border-r-purple-500"
+          />
         </div>
 
         {/* Middle pulsing ring */}
-        <div className="absolute inset-2 animate-pulse">
-          <div className="w-60 h-60 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-20" />
+        <div className="absolute inset-1 mobile:inset-2 animate-pulse">
+          <div
+            className="
+            w-[152px] h-[152px] 
+            mobile:w-[184px] mobile:h-[184px] 
+            mobile-large:w-[216px] mobile-large:h-[216px] 
+            tablet:w-60 tablet:h-60 
+            rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-20"
+          />
         </div>
 
         {/* Inner logo container */}
-        <div className="relative w-64 h-64 flex items-center justify-center">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-1 animate-gradient">
+        <div
+          className="relative 
+          w-40 h-40 
+          mobile:w-48 mobile:h-48 
+          mobile-large:w-56 mobile-large:h-56 
+          tablet:w-64 tablet:h-64 
+          flex items-center justify-center"
+        >
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-0.5 mobile:p-1 animate-gradient">
             <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
               <img
-                className="w-36 h-36 rounded-full animate-float"
+                className="rounded-full animate-float object-contain"
                 src={wevlogo}
                 alt="Loading"
               />
@@ -136,7 +163,16 @@ export const Loader = ({
 
       {/* Progress bar */}
       {progress > 0 && (
-        <div className="w-64 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+        <div
+          className="
+          w-full max-w-[200px]
+          mobile:max-w-[240px] 
+          mobile-large:max-w-[280px] 
+          tablet:max-w-xs 
+          h-1.5 mobile:h-2 
+          bg-gray-200 dark:bg-gray-700 
+          rounded-full overflow-hidden"
+        >
           <div
             className="h-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}
@@ -145,11 +181,29 @@ export const Loader = ({
       )}
 
       {/* Message with typewriter effect */}
-      <div className="relative z-10 text-center">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-typewriter overflow-hidden whitespace-nowrap">
+      <div
+        className="relative z-10 text-center 
+        px-4 mobile:px-6 
+        max-w-xs mobile:max-w-sm mobile-large:max-w-md"
+      >
+        <h2
+          className="
+          text-lg mobile:text-xl mobile-large:text-2xl tablet:text-3xl 
+          font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 
+          bg-clip-text text-transparent 
+          animate-typewriter overflow-hidden 
+          whitespace-normal mobile-large:whitespace-nowrap
+          leading-tight mobile:leading-normal"
+        >
           {message}
         </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 animate-fade-in animation-delay-1000">
+        <p
+          className="
+          text-xs mobile:text-sm 
+          text-gray-500 dark:text-gray-400 
+          mt-1 mobile:mt-2 
+          animate-fade-in animation-delay-1000"
+        >
           This won't take long...
         </p>
       </div>
@@ -178,7 +232,7 @@ const PageLoader = ({ duration = 1500, onClose }) => {
     const timeout = setTimeout(() => {
       setModalIsOpen(false);
       if (onClose) {
-        setTimeout(onClose, 300); // Wait for animation to complete
+        setTimeout(onClose, 300);
       }
     }, duration);
 
@@ -191,10 +245,18 @@ const PageLoader = ({ duration = 1500, onClose }) => {
   return (
     <CustomModal
       isOpen={modalIsOpen}
-      className="px-4"
+      className="px-3 mobile:px-4 tablet:px-6"
       overlayClassName="backdrop-blur-sm"
     >
-      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 max-w-lg w-full mx-auto">
+      <div
+        className="
+        bg-white dark:bg-gray-900 
+        rounded-lg mobile-large:rounded-xl tablet:rounded-2xl 
+        shadow-2xl 
+        p-4 mobile:p-6 mobile-large:p-8 tablet:p-10
+        max-w-xs mobile:max-w-sm mobile-large:max-w-md tablet:max-w-lg 
+        w-full mx-auto"
+      >
         <Loader progress={progress} />
       </div>
     </CustomModal>

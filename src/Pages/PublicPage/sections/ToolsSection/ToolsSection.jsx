@@ -7,7 +7,9 @@ const ToolsSection = () => {
   return (
     <section
       id="tools"
-      className="py-20 px-4 mobile:px-6 tablet:px-8 laptop:px-10 desktop:px-12 relative overflow-hidden"
+      className="py-12 mobile:py-16 tablet:py-20 
+      px-4 mobile:px-6 tablet:px-8 laptop:px-10 desktop:px-12 
+      relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
@@ -19,13 +21,31 @@ const ToolsSection = () => {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-[1600px] mx-auto relative">
         <SectionHeader
           title="Tools We Offer"
           subtitle="Choose a category to explore our comprehensive tools"
         />
 
-        <div className="w-full grid grid-cols-1 mobile:grid-cols-2 laptop:grid-cols-4 gap-72 -ml-30">
+        {/* Responsive Grid */}
+        <div
+          className="w-full grid 
+          grid-cols-1 
+          mobile-large:grid-cols-2 
+          tablet:grid-cols-2
+          tablet-large:grid-cols-3
+          laptop:grid-cols-3
+          desktop:grid-cols-4
+          desktop-large:grid-cols-4
+          gap-4 
+          mobile:gap-5 
+          mobile-large:gap-6 
+          tablet:gap-7
+          laptop:gap-8
+          desktop:gap-10
+          justify-items-center
+          items-start"
+        >
           {toolCategories.map((category, index) => (
             <ToolCategoryCard
               key={index}
