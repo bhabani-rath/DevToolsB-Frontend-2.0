@@ -20,7 +20,7 @@ export const toolCategories = [
       "https://res.cloudinary.com/dva4r5mad/image/upload/I_WANT_A_RUBEL_TO_BE_RUPEE_syu65p.png",
     dpImg:
       "https://res.cloudinary.com/dva4r5mad/image/upload/Your_paragraph_text_zcqwae.png",
-    description: "Convert between different units and formats",
+    description: "Convert between different units,formats and much more",
     href: "/tools?category=converter",
   },
   {

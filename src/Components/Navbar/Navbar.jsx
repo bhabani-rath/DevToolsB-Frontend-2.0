@@ -233,7 +233,7 @@ const Navbar = ({ activeSection }) => {
 
                 {navLinks.map((link, index) => (
                   <motion.a
-                    key={link.name}
+                    key={index}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`relative flex items-center gap-2 px-4 py-2

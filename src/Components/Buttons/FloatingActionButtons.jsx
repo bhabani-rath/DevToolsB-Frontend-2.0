@@ -43,7 +43,7 @@ const FloatingActionButtons = ({ isDarkMode, toggleTheme }) => {
       ),
       tooltip: "Back to Top",
       gradient: "from-green-500 to-teal-600",
-      delay: 1.4,
+      delay: 0.1,
       onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
       alwaysShow: false,
     },

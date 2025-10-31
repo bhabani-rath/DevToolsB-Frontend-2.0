@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @theme {
   --breakpoint-mini: 320px;
@@ -18,6 +19,24 @@
 }
 @custom-variant dark (&:where(.dark, .dark *));
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
 }

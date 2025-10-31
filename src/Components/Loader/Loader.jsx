@@ -51,10 +51,7 @@ const CustomModal = ({
 };
 
 // Advanced Loader Component
-export const Loader = ({
-  progress = 0,
-  message = "Hang tight, we're almost ready!",
-}) => {
+export const Loader = ({ progress = 0 }) => {
   const [particlePositions, setParticlePositions] = useState([]);
 
   // Generate floating particles
@@ -192,10 +189,9 @@ export const Loader = ({
           font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 
           bg-clip-text text-transparent 
           animate-typewriter overflow-hidden 
-          whitespace-normal mobile-large:whitespace-nowrap
           leading-tight mobile:leading-normal"
         >
-          {message}
+          Hang tight, we're almost ready!
         </h2>
         <p
           className="
