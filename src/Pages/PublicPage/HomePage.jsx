@@ -1,6 +1,4 @@
-import EnhancedBackground from "./../../Components/Background/EnhancedBackground";
 import ParticleSystem from "./../../Components/Background/ParticleSystem";
-import MouseInteractiveBackground from "./../../Components/Background/MouseInteractiveBackground";
 import Navbar from "./../../Components/Navbar/Navbar";
 import { Toaster } from "sonner";
 import ProgressBar from "./../../Components/other/ProgressBar";

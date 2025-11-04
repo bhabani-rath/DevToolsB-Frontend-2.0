@@ -243,6 +243,7 @@ const Navbar = ({ activeSection }) => {
                  transition-all duration-300 rounded-full
                  group cursor-pointer z-10
                  ${
+                   hoveredIndex === index ||
                    activeSection === link.href.substring(1)
                      ? "text-gray-900 dark:text-white"
                      : ""

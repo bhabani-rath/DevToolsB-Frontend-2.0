@@ -10,14 +10,6 @@ const ToolsPage = lazy(() =>
   import("./Pages/PublicPage/sections/ToolsSection/ToolPage")
 );
 
-// Lazy loading for admin routes
-const AdminLayout = lazy(() => import("./Pages/Admin/AdminLayout.jsx"));
-const Dashboard = lazy(() => import("./Pages/Admin/Dashboard.jsx"));
-const UsersManagement = lazy(() => import("./Pages/Admin/UserManagement.jsx"));
-const ToolsManagement = lazy(() => import("./Pages/Admin/ToolsManagement.jsx"));
-const Analytics = lazy(() => import("./Pages/Admin/Analytics.jsx"));
-const Settings = lazy(() => import("./Pages/Admin/Settings.jsx"));
-
 // Router configuration
 const router = createBrowserRouter([
   {
@@ -27,32 +19,6 @@ const router = createBrowserRouter([
   {
     path: "/tools",
     element: <ToolsPage />,
-  },
-  {
-    path: "/admin",
-    element: <AdminLayout />,
-    children: [
-      {
-        index: true,
-        element: <Dashboard />,
-      },
-      {
-        path: "users",
-        element: <UsersManagement />,
-      },
-      {
-        path: "tools",
-        element: <ToolsManagement />,
-      },
-      {
-        path: "analytics",
-        element: <Analytics />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
-      },
-    ],
   },
   {
     path: "*",
