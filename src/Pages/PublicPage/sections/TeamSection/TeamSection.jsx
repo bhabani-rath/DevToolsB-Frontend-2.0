@@ -1,4 +1,10 @@
-// sections/TeamSection/TeamSection.jsx
+/**
+ * TeamSection Component
+ *
+ * @description Team members showcase section with member cards.
+ * @author DevToolsB Team
+ */
+
 import SectionHeader from "./../../../../Components/other/SectionHeader";
 import TeamMemberCard from "./TeamMemberCard";
 import { teamData } from "./../../../../demoData/teamData";

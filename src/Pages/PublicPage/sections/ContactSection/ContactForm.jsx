@@ -1,4 +1,10 @@
-// sections/ContactSection/ContactForm.jsx
+/**
+ * ContactForm Component
+ * @description Contact form with validation using custom hook
+ * @param {boolean} isDarkMode - Current theme mode
+ * @author DevToolsB Team
+ */
+
 import { motion } from "framer-motion";
 import useContactForm from "./../../../../Hooks/useContactForm";
 import AnimatedButton from "./../../../../Components/Buttons/AnimatedButton";

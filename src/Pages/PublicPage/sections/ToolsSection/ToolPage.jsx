@@ -1,11 +1,16 @@
-// Pages/PublicPage/ToolsPage.jsx
+/**
+ * ToolsPage Component
+ * @description Full tools page with category filtering and tool grid
+ * @author DevToolsB Team
+ */
+
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import ToolsFilter from "./ToolsFilter";
 import { toolsData, toolCategories } from "../../../../demoData/toolsData";
 import { useDarkMode } from "../../../../Context/ThemeContext";
-import Navbar from "./../../../../Components/Navbar/Navbar";
+import ToolsNavbar from "./../../../../Components/Navbar/ToolsNavbar";
 import Footer from "./../../../../Components/FooterBar/Footer";
 import ToolCard from "./ToolCard";
 
@@ -35,10 +40,10 @@ const ToolsPage = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? "dark" : ""}`}>
-      <div className="bg-gray-50 dark:bg-gray-900">
-        <Navbar />
+      <div className="bg-gray-50 dark:bg-black">
+        <ToolsNavbar />
 
-        <div className="pt-20 pb-10 px-4 mobile:px-6 tablet:px-8">
+        <div className="pt-32 pb-10 px-4 mobile:px-6 tablet:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Page Header */}
             <motion.div

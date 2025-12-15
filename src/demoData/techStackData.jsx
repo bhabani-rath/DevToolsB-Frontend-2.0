@@ -1,4 +1,20 @@
-// constants/techStackData.jsx (note the .jsx extension)
+/**
+ * Tech Stack Data - Technology Stack Display Configuration
+ *
+ * @description Configuration for displaying technology stack cards.
+ * Includes React icon components and proficiency levels.
+ *
+ * @module techStackData
+ * @property {string} name - Technology name
+ * @property {JSX.Element} icon - React icon component
+ * @property {string} color - Tailwind gradient classes
+ * @property {string} description - Brief description
+ * @property {number} proficiency - Skill level (0-100)
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React from "react";
 import {
   SiReact,

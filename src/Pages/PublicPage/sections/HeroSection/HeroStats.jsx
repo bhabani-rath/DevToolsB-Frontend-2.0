@@ -1,4 +1,9 @@
-// sections/HeroSection/HeroStats.jsx
+/**
+ * HeroStats Component
+ * @description Animated statistics display for hero section
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

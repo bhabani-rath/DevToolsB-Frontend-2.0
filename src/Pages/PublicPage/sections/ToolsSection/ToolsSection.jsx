@@ -1,4 +1,10 @@
-// sections/ToolsSection/ToolsSection.jsx
+/**
+ * ToolsSection Component
+ *
+ * @description Tools showcase section displaying tool categories in responsive grid.
+ * @author DevToolsB Team
+ */
+
 import ToolCategoryCard from "./ToolCategoryCard";
 import SectionHeader from "./../../../../Components/other/SectionHeader";
 import { toolCategories } from "../../../../demoData/toolsData";

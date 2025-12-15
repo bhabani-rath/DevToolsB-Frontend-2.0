@@ -1,4 +1,11 @@
-// sections/HeroSection/HeroSection.jsx
+/**
+ * HeroSection Component
+ *
+ * @description Main landing section with parallax effects and animated elements.
+ * @param {MotionValue} scrollY - Scroll position for parallax effects
+ * @author DevToolsB Team
+ */
+
 import { motion, useTransform } from "framer-motion";
 import HeroBadge from "./HeroBadge";
 import HeroTitle from "./HeroTitle";

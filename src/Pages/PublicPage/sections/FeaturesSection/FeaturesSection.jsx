@@ -1,4 +1,10 @@
-// sections/FeaturesSection/FeaturesSection.jsx
+/**
+ * FeaturesSection Component
+ *
+ * @description Features showcase section with interactive feature cards.
+ * @author DevToolsB Team
+ */
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import FeatureCard from "./FeatureCard";
@@ -11,7 +17,7 @@ const FeaturesSection = () => {
   return (
     <section
       id="features"
-      className="py-20 px-4 mobile:px-6 tablet:px-8 laptop:px-10 desktop:px-12 bg-gray-50 dark:bg-gray-900"
+      className="py-20 px-4 mobile:px-6 tablet:px-8 laptop:px-10 desktop:px-12 bg-gray-50 dark:bg-black"
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeader

@@ -1,4 +1,10 @@
-// sections/AboutSection/AboutSection.jsx
+/**
+ * AboutSection Component
+ *
+ * @description About section showcasing platform features and code preview.
+ * @author DevToolsB Team
+ */
+
 import { motion } from "framer-motion";
 import AboutContent from "./AboutContent";
 import CodePreviewCard from "./CodePreviewCard";

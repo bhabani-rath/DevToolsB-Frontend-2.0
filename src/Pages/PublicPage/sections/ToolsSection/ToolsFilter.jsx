@@ -1,4 +1,12 @@
-// sections/ToolsSection/ToolsFilter.jsx
+/**
+ * ToolsFilter Component
+ * @description Category filter buttons for tools page
+ * @param {Array} categories - Category list with icons
+ * @param {string} activeCategory - Currently active category ID
+ * @param {function} onCategoryChange - Category change handler
+ * @author DevToolsB Team
+ */
+
 import { motion } from "framer-motion";
 
 const ToolsFilter = ({ categories, activeCategory, onCategoryChange }) => {

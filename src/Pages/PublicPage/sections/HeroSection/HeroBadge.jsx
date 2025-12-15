@@ -1,4 +1,9 @@
-// sections/HeroSection/HeroBadge.jsx
+/**
+ * HeroBadge Component
+ * @description Badge displaying platform version and status indicator
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

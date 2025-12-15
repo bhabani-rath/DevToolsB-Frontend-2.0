@@ -1,4 +1,9 @@
-// sections/CTASection/CTABackground.jsx
+/**
+ * CTABackground Component
+ * @description Animated background with stars and floating orbs for CTA section
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

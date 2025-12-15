@@ -1,4 +1,22 @@
-// components/shared/AnimatedButton.jsx
+/**
+ * AnimatedButton Component
+ *
+ * @description Reusable button with Framer Motion animations and gradient effects.
+ * Supports multiple variants and optional icons.
+ *
+ * @component
+ * @param {React.ReactNode} children - Button text/content
+ * @param {function} onClick - Click handler function
+ * @param {string} type - Button type (button|submit|reset)
+ * @param {string} variant - Style variant (primary|secondary|gradient)
+ * @param {boolean} fullWidth - Full width flag
+ * @param {string|React.ReactNode} icon - Icon (arrow-right or custom component)
+ * @param {string} className - Additional CSS classes
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

@@ -1,4 +1,23 @@
-// constants/teamData.js
+/**
+ * Team Data - Development Team Information
+ *
+ * @description Information about DevToolsB team members including skills,
+ * bio, and social links.
+ *
+ * @module teamData
+ * @property {string} name - Team member's full name
+ * @property {string} role - Job title/role
+ * @property {string} avatar - Emoji avatar
+ * @property {array} skills - Technical skills list
+ * @property {string} bio - Short biography
+ * @property {string} github - GitHub profile URL
+ * @property {string} linkedin - LinkedIn profile URL
+ * @property {string} portfolio - Portfolio website URL
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 export const teamData = [
   {
     name: "Bhabani Shankar Rath",

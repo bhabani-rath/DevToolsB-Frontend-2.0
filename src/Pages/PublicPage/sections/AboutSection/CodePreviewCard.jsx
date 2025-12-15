@@ -1,4 +1,9 @@
-// sections/AboutSection/CodePreviewCard.jsx
+/**
+ * CodePreviewCard Component
+ * @description Animated code editor preview with syntax highlighting
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

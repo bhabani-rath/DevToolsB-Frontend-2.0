@@ -1,4 +1,11 @@
-// sections/ContactSection/ContactMethodCard.jsx
+/**
+ * ContactMethodCard Component
+ * @description Card displaying a contact method with icon and details
+ * @param {object} item - Contact method data (icon, label, value, color)
+ * @param {number} index - Card index for stagger animation
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

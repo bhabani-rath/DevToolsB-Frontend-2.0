@@ -1,4 +1,26 @@
-// constants/featuresData.js
+/**
+ * Features Data - Application Feature Catalog
+ *
+ * @description Comprehensive list of platform features with detailed information.
+ * Each feature includes tools, statistics, use cases, and visual styling.
+ *
+ * @module featuresData
+ * @property {string} icon - Emoji icon for the feature
+ * @property {string} title - Feature name/title
+ * @property {string} description - Short description
+ * @property {string} longDescription - Detailed explanation
+ * @property {string} gradient - Tailwind gradient classes
+ * @property {array} tools - List of tools in this category
+ * @property {array} features - Key features list
+ * @property {object} stats - Statistical metrics
+ * @property {array} useCases - Common use cases
+ * @property {string} badge - Feature badge/tag
+ * @property {string} highlight - Main selling point
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 export const featuresData = [
   {
     icon: "🧮",

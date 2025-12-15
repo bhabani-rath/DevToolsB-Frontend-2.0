@@ -1,4 +1,13 @@
-// sections/FeaturesSection/FeatureCard.jsx
+/**
+ * FeatureCard Component
+ * @description Interactive feature showcase card with hover effects and expandable details
+ * @param {object} feature - Feature data object
+ * @param {number} index - Card index for animation delays
+ * @param {boolean} isActive - Active state
+ * @param {function} onHover - Hover callback
+ * @author DevToolsB Team
+ */
+
 import { motion, AnimatePresence } from "framer-motion";
 import { HiSparkles, HiCheckCircle, HiLightningBolt } from "react-icons/hi";
 

@@ -205,7 +205,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                         Crop Profile Picture
                       </h3>
 
-                      <div className="relative h-64 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden">
+                      <div className="relative h-64 bg-gray-100 dark:bg-black rounded-lg overflow-hidden">
                         <Cropper
                           image={imageSrc}
                           crop={crop}
@@ -454,7 +454,7 @@ const SignUpModal = ({ isOpen, onClose }) => {
                       className="peer w-full p-3 mini:p-3.5 mobile:p-4 pt-5 mini:pt-5.5 mobile:pt-6 pl-9 mini:pl-10 mobile:pl-11 pr-3 mini:pr-4 
                                bg-inherit border-2 rounded-md outline-none transition disabled:opacity-70 disabled:cursor-not-allowed 
                                border-gray-500 dark:border-gray-400 focus:border-gray-900 dark:focus:border-gray-300
-                               dark:bg-gray-900 text-gray-900 dark:text-white text-sm mini:text-base appearance-none"
+                               dark:bg-black text-gray-900 dark:text-white text-sm mini:text-base appearance-none"
                     >
                       <option value="">Select Gender</option>
                       <option value="male">Male</option>

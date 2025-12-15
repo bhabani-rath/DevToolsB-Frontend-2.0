@@ -1,4 +1,11 @@
-// sections/ContactSection/ContactSection.jsx
+/**
+ * ContactSection Component
+ *
+ * @description Contact section with form, contact info, and trust indicators.
+ * @param {boolean} isDarkMode - Current theme mode
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";

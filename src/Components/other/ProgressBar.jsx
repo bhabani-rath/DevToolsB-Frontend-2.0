@@ -1,4 +1,16 @@
-// components/ui/ProgressBar.jsx
+/**
+ * ProgressBar Component
+ *
+ * @description Fixed scroll progress indicator at the top of the page.
+ * Shows gradient bar that expands based on scroll position.
+ *
+ * @component
+ * @param {MotionValue} scrollYProgress - Framer Motion scroll progress (0-1)
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

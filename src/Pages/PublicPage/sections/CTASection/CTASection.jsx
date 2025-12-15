@@ -1,4 +1,10 @@
-// sections/CTASection/CTASection.jsx
+/**
+ * CTASection Component
+ *
+ * @description Call-to-action section with gradient background and statistics.
+ * @author DevToolsB Team
+ */
+
 import { motion } from "framer-motion";
 import CTAStats from "./CTAStats";
 import CTABackground from "./CTABackground";

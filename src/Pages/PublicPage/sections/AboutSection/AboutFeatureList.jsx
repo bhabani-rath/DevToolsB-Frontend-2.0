@@ -1,4 +1,9 @@
-// sections/AboutSection/AboutFeatureList.jsx
+/**
+ * AboutFeatureList Component
+ * @description Animated list of key platform features with icons
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

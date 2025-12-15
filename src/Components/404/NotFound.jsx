@@ -1,4 +1,23 @@
-// pages/NotFound.jsx or pages/404.jsx
+/**
+ * NotFound Component - 404 Error Page
+ *
+ * @description Beautiful animated 404 error page with smooth animations.
+ * Features animated background blobs, floating particles, and helpful navigation.
+ *
+ * @component
+ * @features
+ * - Animated gradient background with floating blobs
+ * - Animated 404 text with gradient
+ * - Floating search icon with bounce animation
+ * - Navigation buttons (Go Home, Go Back)
+ * - Helpful links to popular pages
+ * - Fully responsive design
+ * - Theme-aware (light/dark mode)
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import { motion } from "framer-motion";
 import { FiHome, FiArrowLeft, FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -60,7 +79,7 @@ const NotFound = () => {
       >
         <div
           className="relative 
-          bg-white/80 dark:bg-gray-900/80 
+          bg-white/80 dark:bg-black/80 
           backdrop-blur-xl rounded-3xl p-8 tablet:p-12 
           border border-gray-200 dark:border-gray-800/50 
           shadow-2xl"

@@ -1,3 +1,24 @@
+/**
+ * InputField Component
+ *
+ * @description Styled input field with floating label, icon support,
+ * and error/helper text.
+ *
+ * @component
+ * @param {string} type - Input type (text|email|password|etc.)
+ * @param {string} name - Input name attribute
+ * @param {string} id - Input ID attribute
+ * @param {string} label - Floating label text
+ * @param {React.ReactNode} icon - Optional icon component
+ * @param {string} helper - Helper text (shows when no error)
+ * @param {string} value - Input value
+ * @param {function} onChange - Change event handler
+ * @param {string} error - Error message (overrides helper text)
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React from "react";
 
 const InputField = ({
@@ -22,7 +43,7 @@ const InputField = ({
               ? "border-red-500 focus:border-red-500"
               : "border-gray-500 dark:border-gray-400 focus:border-gray-900 dark:focus:border-gray-300"
           }
-          dark:bg-gray-900 text-gray-900 dark:text-white text-sm mini:text-base`}
+          dark:bg-black text-gray-900 dark:text-white text-sm mini:text-base`}
           type={type}
           placeholder=""
           name={name}

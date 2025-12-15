@@ -1,4 +1,9 @@
-// sections/HeroSection/HeroTitle.jsx
+/**
+ * HeroTitle Component
+ * @description Main animated hero title with gradient text effects
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

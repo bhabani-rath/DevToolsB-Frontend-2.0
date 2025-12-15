@@ -1,4 +1,26 @@
-// components/background/EnhancedBackground.jsx
+/**
+ * EnhancedBackground Component
+ *
+ * @description Animated background with geometric shapes, orbiting circles,
+ * and parallax scrolling effects.
+ *
+ * @component
+ * @features
+ * - Radial gradient background
+ * - Orbiting circular elements (8)
+ * - Floating geometric shapes (15)
+ * - Parallax scroll effect
+ * - Grid pattern overlay
+ * - Theme-aware colors
+ * - Smooth continuous animations
+ *
+ * @param {boolean} isDarkMode - Current theme mode
+ * @param {MotionValue} scrollY - Framer Motion scroll position value
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React from "react";
 import { motion, useTransform } from "framer-motion";
 

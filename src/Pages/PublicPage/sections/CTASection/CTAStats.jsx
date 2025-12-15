@@ -1,4 +1,9 @@
-// sections/CTASection/CTAStats.jsx
+/**
+ * CTAStats Component
+ * @description Animated statistics display for CTA section
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

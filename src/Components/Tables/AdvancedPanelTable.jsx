@@ -1,3 +1,22 @@
+/**
+ * AdvancedPanelTable Component
+ *
+ * @description Data table with server-side pagination, sorting, and CSV export.
+ * Uses react-data-table-component for table functionality.
+ *
+ * @component
+ * @features
+ * - Server-side pagination
+ * - Sortable columns
+ * - CSV export functionality
+ * - Loading state
+ * - Selectable rows
+ * - Search/filter support
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import { CSVLink } from "react-csv";

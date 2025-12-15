@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -38,4 +39,57 @@ body {
 
 .gradient-bg {
   background: linear-gradient(to right, #3b82f6, #8b5cf6);
+}
+
+.sidebar-item-active {
+  position: relative;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.sidebar-item-active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 0 4px 4px 0;
+}
+
+.sidebar-glassmorphism {
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Typewriter cursor animation */
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Moving gradient animation */
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

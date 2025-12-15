@@ -1,3 +1,27 @@
+/**
+ * Navbar Component - Main Navigation Bar
+ *
+ * @description Primary navigation component with responsive design and smooth animations.
+ * Features scroll-spy active section tracking, mobile menu, theme toggle, and authentication modals.
+ *
+ * @component
+ * @features
+ * - Sticky header with scroll-aware styling
+ * - Smooth scroll navigation with offset
+ * - Animated logo with hover effects
+ * - Desktop navigation with hover indicators
+ * - Mobile hamburger menu with slide animation
+ * - Theme toggle (dark/light mode)
+ * - Sign In/Sign Up modal integration
+ * - Active section highlighting
+ * - Fully responsive across all breakpoints
+ *
+ * @param {string} activeSection - Currently active page section
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "../../Context/ThemeContext";
@@ -129,7 +153,7 @@ const Navbar = ({ activeSection }) => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      className="bg-white shadow-lg dark:bg-gray-900 transition-colors duration-300 fixed top-0 z-10 w-full"
+      className="bg-white shadow-lg dark:bg-black transition-colors duration-300 fixed top-0 z-10 w-full"
     >
       <div className="w-full px-4 mobile:px-6 tablet:px-8 laptop:px-10 desktop:px-12">
         <div className="flex justify-between items-center h-16 tablet:h-20">

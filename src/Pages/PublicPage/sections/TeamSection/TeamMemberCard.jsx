@@ -1,4 +1,11 @@
-// sections/TeamSection/TeamMemberCard.jsx
+/**
+ * TeamMemberCard Component
+ * @description Animated card displaying team member info with 3D effects
+ * @param {object} member - Team member data
+ * @param {number} index - Card index for stagger animation
+ * @author DevToolsB Team
+ */
+
 import { motion } from "framer-motion";
 import { FiExternalLink, FiGithub, FiLinkedin, FiAward } from "react-icons/fi";
 
@@ -23,7 +30,7 @@ const TeamMemberCard = ({ member, index }) => {
         {/* Main card */}
         <div
           className="relative h-full 
-          bg-white/90 dark:bg-gray-900/80 
+          bg-white/90 dark:bg-black/80 
           backdrop-blur-xl rounded-3xl p-8 
           border border-gray-200 dark:border-gray-800/50 
           shadow-2xl"

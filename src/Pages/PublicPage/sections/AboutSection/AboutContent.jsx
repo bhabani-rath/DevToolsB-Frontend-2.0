@@ -1,4 +1,9 @@
-// sections/AboutSection/AboutContent.jsx
+/**
+ * AboutContent Component
+ * @description Main content for About section with feature list
+ * @author DevToolsB Team
+ */
+
 import { motion } from "framer-motion";
 import AboutFeatureList from "./AboutFeatureList";
 

@@ -1,3 +1,19 @@
+/**
+ * HomeCard Component
+ *
+ * @description Reusable card wrapper with scroll-triggered entrance animations
+ * and optional hover effects.
+ *
+ * @component
+ * @param {React.ReactNode} children - Card content
+ * @param {string} className - Additional CSS classes
+ * @param {boolean} hoverable - Enable hover lift effect (default: true)
+ * @param {number} delay - Animation delay in seconds
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import { motion } from "framer-motion";
 
 const HomeCard = ({

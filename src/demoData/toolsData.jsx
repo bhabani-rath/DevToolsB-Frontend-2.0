@@ -1,8 +1,32 @@
+/**
+ * Tools Data - Complete Tools Catalog
+ *
+ * @description Comprehensive catalog of all available tools organized by categories.
+ * Includes tool metadata, features, and visual styling information.
+ *
+ * @module toolsData
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
+/**
+ * Tool Categories
+ * High-level categorization of tools with overview information
+ *
+ * @property {string} id - Category identifier
+ * @property {string} name - Category display name
+ * @property {number} toolsCreated - Number of tools in category
+ * @property {string} totalUser - User count display string
+ * @property {string} posterImg - Category poster image URL
+ * @property {string} dpImg - Category display picture URL
+ * @property {string} description - Category description
+ * @property {string} href - Navigation link
+ */
 export const toolCategories = [
   {
     id: "calculator",
     name: "Calculators",
-    toolsCreated: 20,
+    toolsCreated: 21,
     totalUser: "150k+",
     posterImg:
       "https://res.cloudinary.com/dva4r5mad/image/upload/Calc-Tool-Main-Area-Card-Logo_s54bhl.jpg",
@@ -48,6 +72,23 @@ export const toolCategories = [
     href: "/tools?category=miscellaneous",
   },
 ];
+
+/**
+ * Individual Tools Data
+ * Detailed information for each tool in the platform
+ *
+ * @property {number} id - Unique tool identifier
+ * @property {string} name - Tool name
+ * @property {string} slug - URL-friendly identifier
+ * @property {string} description - Tool description
+ * @property {string} icon - Emoji icon
+ * @property {string} category - Category ID
+ * @property {string} categoryName - Category display name
+ * @property {string} categoryColor - Tailwind gradient for category
+ * @property {string} gradient - Tool-specific gradient
+ * @property {array} features - List of tool features
+ * @property {boolean} isPopular - Popular tool flag
+ */
 export const toolsData = [
   // Calculators
   {
@@ -137,6 +178,204 @@ export const toolsData = [
       "Next birthday",
       "Age difference",
       "Zodiac sign",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 16,
+    name: "Tip Calculator",
+    slug: "tip-calculator",
+    description: "Calculate tips and split bills",
+    icon: "💵",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-emerald-400 to-teal-600",
+    features: [
+      "Custom tip %",
+      "Bill splitting",
+      "Per person cost",
+      "Total with tip",
+    ],
+    isPopular: true,
+  },
+  {
+    id: 17,
+    name: "Discount Calculator",
+    slug: "discount-calculator",
+    description: "Calculate discounts and savings",
+    icon: "🏷️",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-pink-400 to-rose-600",
+    features: [
+      "Percentage off",
+      "Final price",
+      "Savings amount",
+      "Multiple discounts",
+    ],
+    isPopular: true,
+  },
+  {
+    id: 18,
+    name: "GST Calculator",
+    slug: "gst-calculator",
+    description: "Calculate GST/Tax amounts",
+    icon: "🧾",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-amber-400 to-yellow-600",
+    features: [
+      "Add/Remove GST",
+      "Multiple tax rates",
+      "Tax breakdown",
+      "Export invoice",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 19,
+    name: "Compound Interest Calculator",
+    slug: "compound-interest-calculator",
+    description: "Calculate compound interest growth",
+    icon: "📈",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-green-400 to-lime-600",
+    features: [
+      "Annual/Monthly compounding",
+      "Additional contributions",
+      "Interest earnings chart",
+      "Future value",
+    ],
+    isPopular: true,
+  },
+  {
+    id: 20,
+    name: "Date Calculator",
+    slug: "date-calculator",
+    description: "Calculate date differences and add/subtract days",
+    icon: "📆",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-violet-400 to-purple-600",
+    features: [
+      "Date difference",
+      "Add/Subtract days",
+      "Business days",
+      "Weekday counter",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 21,
+    name: "Time Calculator",
+    slug: "time-calculator",
+    description: "Calculate time differences and conversions",
+    icon: "⏰",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-sky-400 to-blue-600",
+    features: [
+      "Time difference",
+      "Add/Subtract time",
+      "Time zone conversion",
+      "Decimal hours",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 22,
+    name: "Grade Calculator",
+    slug: "grade-calculator",
+    description: "Calculate grades and GPA",
+    icon: "🎓",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-indigo-400 to-blue-600",
+    features: [
+      "Weighted grades",
+      "GPA calculation",
+      "Letter grades",
+      "Pass/Fail prediction",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 23,
+    name: "Fuel Cost Calculator",
+    slug: "fuel-cost-calculator",
+    description: "Calculate fuel consumption and costs",
+    icon: "⛽",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-orange-400 to-red-600",
+    features: [
+      "MPG/KPL calculation",
+      "Trip cost",
+      "Fuel efficiency",
+      "Cost comparison",
+    ],
+    isPopular: false,
+  },
+  {
+    id: 24,
+    name: "Mortgage Calculator",
+    slug: "mortgage-calculator",
+    description: "Calculate home mortgage payments",
+    icon: "🏠",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-cyan-400 to-blue-600",
+    features: [
+      "Monthly payment",
+      "Total interest",
+      "Amortization schedule",
+      "Extra payments",
+    ],
+    isPopular: true,
+  },
+  {
+    id: 25,
+    name: "Investment Calculator",
+    slug: "investment-calculator",
+    description: "Calculate investment returns and ROI",
+    icon: "💹",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-blue-400 to-indigo-600",
+    features: [
+      "ROI calculation",
+      "Future value",
+      "Growth projection",
+      "Return breakdown",
+    ],
+    isPopular: true,
+  },
+  {
+    id: 26,
+    name: "Calorie Calculator",
+    slug: "calorie-calculator",
+    description: "Calculate daily calorie needs",
+    icon: "🍎",
+    category: "calculator",
+    categoryName: "Calculator",
+    categoryColor: "from-blue-400 to-blue-600",
+    gradient: "from-red-400 to-pink-600",
+    features: [
+      "BMR calculation",
+      "TDEE",
+      "Macro breakdown",
+      "Weight goal planning",
     ],
     isPopular: false,
   },

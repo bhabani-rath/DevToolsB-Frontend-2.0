@@ -1,3 +1,27 @@
+/**
+ * SignInModal Component
+ *
+ * @description Authentication modal for user sign-in with form validation.
+ * Features body scroll lock, escape key handling, and animated entrance.
+ *
+ * @component
+ * @features
+ * - Email and password input fields
+ * - Body scroll lock when open
+ * - Escape key to close
+ * - Animated overlay and modal
+ * - Remember me checkbox
+ * - Forgot password link
+ * - Theme-aware styling
+ * - Responsive design
+ *
+ * @param {boolean} isOpen - Modal visibility state
+ * @param {function} onClose - Callback to close modal
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import InputField from "../InputFields/InputField";

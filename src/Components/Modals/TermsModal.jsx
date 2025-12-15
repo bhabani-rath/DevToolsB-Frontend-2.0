@@ -105,14 +105,14 @@ const TermsModal = ({ isOpen, onClose }) => {
             exit="exit"
           >
             <motion.div
-              className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-gray-900 
+              className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-black 
                        rounded-2xl shadow-2xl overflow-hidden"
               variants={modalVariants}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
               <div
-                className="sticky top-0 bg-white dark:bg-gray-900 border-b 
+                className="sticky top-0 bg-white dark:bg-black border-b 
                             border-gray-200 dark:border-gray-800 p-6 z-10"
               >
                 <div className="flex items-center justify-between">

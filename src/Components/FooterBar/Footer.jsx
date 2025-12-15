@@ -1,4 +1,25 @@
-// components/Footer.jsx
+/**
+ * Footer Component - Site Footer
+ *
+ * @description Comprehensive footer with animated elements, tool categories,
+ * social links, newsletter subscription, and legal modals.
+ *
+ * @component
+ * @features
+ * - Animated brand section with logo
+ * - Social media links with hover animations
+ * - Tool category navigation (Calculators, Converters, Generators)
+ * - Newsletter subscription form
+ * - Privacy and Terms modals
+ * - Floating background elements
+ * - Back-to-top button
+ * - Fully responsive design
+ * - Theme-aware styling
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDarkMode } from "../../Context/ThemeContext";
@@ -135,7 +156,7 @@ const Footer = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
-        className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 relative"
+        className="bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 relative"
       >
         <div className="w-full px-4 mini:px-5 mobile:px-6 tablet:px-8 laptop:px-10 desktop:px-12 py-8 mobile:py-10 tablet:py-12">
           {/* Main Footer Content */}

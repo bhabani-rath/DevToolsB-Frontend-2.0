@@ -1,4 +1,10 @@
-// sections/HeroSection/ScrollIndicator.jsx
+/**
+ * ScrollIndicator Component
+ * @description Animated scroll indicator with smooth scroll navigation
+ * @param {string} targetSection - Target section ID for smooth scrolling
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 

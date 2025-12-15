@@ -1,3 +1,15 @@
+/**
+ * ToolCategoryCard Component
+ * @description Card displaying tool category with stats and navigation
+ * @param {string} posterImg - Category poster image URL
+ * @param {string} sectionHeader - Category name
+ * @param {string} descTool - Category description
+ * @param {number} toolCount - Number of tools in category
+ * @param {string} totalUser - User count display
+ * @param {string} href - Navigation link
+ * @author DevToolsB Team
+ */
+
 import { AiOutlineArrowUp } from "react-icons/ai";
 
 const ToolCategoryCard = ({

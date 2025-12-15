@@ -1,4 +1,9 @@
-// sections/ContactSection/ContactInfo.jsx
+/**
+ * ContactInfo Component
+ * @description Contact information section with multiple contact methods
+ * @author DevToolsB Team
+ */
+
 import { motion } from "framer-motion";
 import ContactMethodCard from "./ContactMethodCard";
 

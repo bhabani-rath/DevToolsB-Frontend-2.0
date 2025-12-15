@@ -1,4 +1,17 @@
-// components/ui/SectionHeader.jsx
+/**
+ * SectionHeader Component
+ *
+ * @description Reusable section header with gradient title and subtitle.
+ * Includes scroll-triggered fade-in animations.
+ *
+ * @component
+ * @param {string} title - Main heading text (rendered with gradient)
+ * @param {string} subtitle - Optional subtitle text
+ *
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import { motion } from "framer-motion";
 
 const SectionHeader = ({ title, subtitle }) => {

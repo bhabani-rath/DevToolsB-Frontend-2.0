@@ -1,7 +1,27 @@
+/**
+ * Page Loader Components
+ *
+ * @description Advanced loading screen with animated particles and progress tracking.
+ * Includes custom modal component and sophisticated loader animation.
+ *
+ * @module Loader
+ * @author DevToolsB Team
+ * @version 1.0.0
+ */
+
 import { useEffect, useState } from "react";
 import wevlogo from "../../assets/Home.jsx Assets/B Logo.png";
 
-// Custom Modal Component
+/**
+ * CustomModal Component
+ * Reusable modal wrapper with fade and scale animations
+ *
+ * @component
+ * @param {boolean} isOpen - Modal visibility state
+ * @param {React.ReactNode} children - Modal content
+ * @param {string} className - Additional CSS classes for modal content
+ * @param {string} overlayClassName - Additional CSS classes for overlay
+ */
 const CustomModal = ({
   isOpen,
   children,
@@ -11,10 +31,11 @@ const CustomModal = ({
   const [isVisible, setIsVisible] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
 
+  // Handle modal mount/unmount animation timing
   useEffect(() => {
     if (isOpen) {
       setShouldRender(true);
-      // Small delay for animation
+      // Small delay for animation using double RAF
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           setIsVisible(true);
@@ -24,7 +45,7 @@ const CustomModal = ({
       setIsVisible(false);
       const timer = setTimeout(() => {
         setShouldRender(false);
-      }, 300);
+      }, 300); // Match animation duration
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
@@ -33,12 +54,14 @@ const CustomModal = ({
 
   return (
     <>
+      {/* Backdrop overlay */}
       <div
         className={`fixed inset-0 z-50 transition-all duration-300 ${
           isVisible ? "opacity-100" : "opacity-0"
         } ${overlayClassName}`}
         style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
       />
+      {/* Modal content container */}
       <div
         className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 transform ${
           isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -50,11 +73,26 @@ const CustomModal = ({
   );
 };
 
-// Advanced Loader Component
+/**
+ * Loader Component - Advanced Animated Loader
+ *
+ * @component
+ * @description Displays an animated loading screen with:
+ * - Floating particle background
+ * - Rotating outer ring
+ * - Pulsing middle ring
+ * - Centered logo with gradient border
+ * - Optional progress bar
+ *
+ * @param {number} progress - Loading progress percentage (0-100)
+ */
 export const Loader = ({ progress = 0 }) => {
   const [particlePositions, setParticlePositions] = useState([]);
 
-  // Generate floating particles
+  /**
+   * Generate floating particle positions
+   * Creates 20 particles with random properties
+   */
   useEffect(() => {
     const particles = Array.from({ length: 20 }, (_, i) => ({
       id: i,
@@ -68,7 +106,10 @@ export const Loader = ({ progress = 0 }) => {
     setParticlePositions(particles);
   }, []);
 
-  // Animate particles
+  /**
+   * Animate particles continuously
+   * Updates particle positions each frame
+   */
   useEffect(() => {
     let animationFrame;
     const animate = () => {
@@ -147,7 +188,7 @@ export const Loader = ({ progress = 0 }) => {
           flex items-center justify-center"
         >
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-0.5 mobile:p-1 animate-gradient">
-            <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
+            <div className="w-full h-full rounded-full bg-white dark:bg-black flex items-center justify-center">
               <img
                 className="rounded-full animate-float object-contain"
                 src={wevlogo}
@@ -207,7 +248,16 @@ export const Loader = ({ progress = 0 }) => {
   );
 };
 
-// Main Modal Component
+/**
+ * PageLoader Component - Main Loader Wrapper
+ *
+ * @component
+ * @description Wraps the Loader in a modal with automatic dismissal.
+ * Simulates loading progress and auto-closes after duration.
+ *
+ * @param {number} duration - Loading duration in milliseconds (default: 1500)
+ * @param {function} onClose - Callback function when loading completes
+ */
 const PageLoader = ({ duration = 1500, onClose }) => {
   const [modalIsOpen, setModalIsOpen] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -246,7 +296,7 @@ const PageLoader = ({ duration = 1500, onClose }) => {
     >
       <div
         className="
-        bg-white dark:bg-gray-900 
+        bg-white dark:bg-black 
         rounded-lg mobile-large:rounded-xl tablet:rounded-2xl 
         shadow-2xl 
         p-4 mobile:p-6 mobile-large:p-8 tablet:p-10

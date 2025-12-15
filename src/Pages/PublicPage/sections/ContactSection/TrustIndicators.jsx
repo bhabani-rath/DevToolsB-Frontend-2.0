@@ -1,4 +1,9 @@
-// sections/ContactSection/TrustIndicators.jsx
+/**
+ * TrustIndicators Component
+ * @description Trust indicators showing platform features and capabilities
+ * @author DevToolsB Team
+ */
+
 import React from "react";
 import { motion } from "framer-motion";
 
